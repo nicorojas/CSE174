@@ -1,0 +1,151 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 10/1/2015
+// Filename: BowlingCalculator.java
+// Description: Asks the user for the score of each roll in a game of bowling
+//              and computes the total score along w/ strikes and spares.
+
+import java.util.Scanner;
+
+public class BowlingCalculator {
+   
+   public static void main(String[] args) { 
+
+      Scanner kb = new Scanner(System.in);
+      int score1, score2, score3, score4, score5, score6, score7, score8, score9,
+          score10, score11, score12, score13, score14, score15, score16, score17,
+          score18, score19, score20, totalscore;
+      //rename score variables?
+      //spares, strikes
+      
+      //////////////////////// Frame 1 ////////////////////////
+      System.out.print("Frame 1  -- Ball 1:");
+      score1 = kb.nextInt();
+      
+      if(score1 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score2 = kb.nextInt();
+      }
+      
+      //////////////////////// Frame 2 ////////////////////////
+      System.out.print("Frame 2  -- Ball 1:");
+      score3 = kb.nextInt();
+      
+      if(score3 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score4 = kb.nextInt();
+      }
+      
+      //////////////////////// Frame 3 ////////////////////////
+      System.out.print("Frame 3  -- Ball 1:");
+      score5 = kb.nextInt();
+      
+      if(score5 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score6 = kb.nextInt();
+      }
+      
+      //////////////////////// Frame 4 ////////////////////////
+      System.out.print("Frame 4  -- Ball 1:");
+      score7 = kb.nextInt();
+      
+      if(score7 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score8 = kb.nextInt();
+      }
+      
+      //////////////////////// Frame 5 ////////////////////////
+      System.out.print("Frame 5  -- Ball 1:");
+      score9 = kb.nextInt();
+      
+      if(score9 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score10 = kb.nextInt();
+      }
+      
+      //////////////////////// Frame 6 ////////////////////////
+      System.out.print("Frame 6  -- Ball 1:");
+      score11 = kb.nextInt();
+      
+      if(score11 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score12 = kb.nextInt();
+      }
+      
+      //////////////////////// Frame 7 ////////////////////////
+      System.out.print("Frame 7  -- Ball 1:");
+      score13 = kb.nextInt();
+      
+      if(score13 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score14 = kb.nextInt();
+      }      
+            
+      //////////////////////// Frame 8 ////////////////////////
+      System.out.print("Frame 8  -- Ball 1:");
+      score15 = kb.nextInt();
+      
+      if(score15 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score16 = kb.nextInt();
+      }
+            
+      //////////////////////// Frame 9 ////////////////////////
+      System.out.print("Frame 9  -- Ball 1:");
+      score17 = kb.nextInt();
+      
+      if(score17 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score18 = kb.nextInt();
+      }
+            
+      //////////////////////// Frame 10 ////////////////////////
+      System.out.print("Frame 10 -- Ball 1:");
+      score19 = kb.nextInt();
+      
+      if(score19 != 10){
+       
+         System.out.print("         -- Ball 2:");
+         score20 = kb.nextInt();
+      }
+      
+      
+      
+      // Calculations
+      
+      
+      
+      
+      
+      
+      
+      
+      // Output
+      
+      System.out.println("Your total score is ");
+      
+      System.out.println("You rolled ___ strikes and ___ spares.");
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   }
+}

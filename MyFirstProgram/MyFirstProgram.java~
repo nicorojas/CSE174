@@ -1,0 +1,28 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 8/24/2015
+// Filename: MyFirstProgram.java
+// Description: Practice with writing, saving, and compiling code.
+
+import java.util.Scanner;  // Scanner needed for user input
+
+public class MyFirstProgram{
+   
+   public static void man(String[] args){
+      
+   }
+   
+   public static void printWelcome(String name){
+      
+   }
+   
+   public static void printGameIntro(String name){
+      
+   }
+   
+   public static void drawBorder(int length, char symbol){
+        
+   }
+   
+}

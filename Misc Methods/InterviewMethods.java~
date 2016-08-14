@@ -1,0 +1,22 @@
+/**
+ * Auto Generated Java Class.
+ */
+public class InterviewMethods {
+   
+   
+   public static void main(String[] args) { 
+      
+      int root = 4, exp = 2;
+      
+      pow(root, exp);
+   }
+   
+   public static int pow (int root, int exp)
+   
+      int answer = 0;
+      
+      for(int i = 0; i < exp; i++)
+         answer*= root;
+      
+      return answer;
+}

@@ -1,0 +1,33 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 9/16/2015
+// Filename: TriangleCalculator.java
+// Description: 
+
+//notes for exam
+
+
+import java.util.Scanner;
+
+public class TriangleCalculator {
+   
+   
+   public static void main(String[] args) { 
+    
+      Scanner kb = new Scanner(System.in);
+      String name;
+      int coordinates;
+      
+      System.out.println("Enter the three-letter name of a triangle:");
+      name = kb.next();
+      
+      System.out.println("Enter the coordinates for the three vertices of the triangle (in order of letters):");
+      coordinates = kb.nextInt();
+      
+      System.out.println("");
+      
+      System.out.println("");
+      
+   }
+}

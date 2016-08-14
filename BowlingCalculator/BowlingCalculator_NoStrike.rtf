@@ -1,0 +1,556 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 // Name: Nico Rojas\
+// Instructor: Krumpe\
+// CSE 174-F\
+// Date: 10/1/2015\
+// Filename: BowlingCalculator.java\
+// Description: Asks the user for the score of each roll in a game of bowling\
+//              and computes the total score along w/ strikes and spares.\
+\
+\
+//test - if strike, isSpare remains true /// fix <-----\
+\
+//double check 80 char line limit\
+\
+// 8 1 3 7 10 10 10 2 6 0 10 5 4 9 0 10 6 4\
+\
+//add comments\
+\
+import java.util.Scanner;\
+\
+public class BowlingCalculator \{\
+   \
+   public static void main(String[] args) \{ \
+\
+      Scanner kb = new Scanner(System.in);\
+      boolean isSpare = false, isStrike = false, isStrikePass = false;\
+      int score1 = 0, score2 = 0, score3 = 0, score4 = 0, score5 = 0,\
+          score6 = 0, score7 = 0, score8 = 0, score9 = 0, score10 = 0,\
+          score11 = 0, score12 = 0, score13 = 0, score14 = 0, score15 = 0,\
+          score16 = 0, score17 = 0, score18 = 0, score19 = 0, score20 = 0,\
+          totalscore = 0, strike = 0, spare = 0, extra_score = 0;\
+      \
+      //////////////////////// Frame 1 ////////////////////////\
+      System.out.print("Frame 1  -- Ball 1:");\
+      score1 = kb.nextInt();\
+      totalscore+= score1;\
+      \
+      if(score1 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score2 = kb.nextInt();\
+         totalscore+= score2;\
+         \
+         if(score1 + score2 == 10)\{ \
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;\
+         isStrike = true;\
+      \}\
+      \
+                      \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Frame 2 ////////////////////////\
+      System.out.print("Frame 2  -- Ball 1:");\
+      score3 = kb.nextInt();\
+      totalscore+= score3;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isStrike == true)\{\
+         totalscore+= score3;\
+         isStrike = false;\
+      \}\
+  \
+      if(isSpare == true)\{\
+         totalscore+= score3;\
+         isSpare = false;\
+      \}\
+      \
+      isStrikePass = true;\
+      \
+      if(score3 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score4 = kb.nextInt();\
+         totalscore+= score4;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score4;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score3 + score4 == 10)\{\
+            spare++;\
+            isSpare = true;;\
+         \}\
+      \}\
+      else\{\
+         strike++;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score4;\
+            isStrikePass = false;\
+         \}\
+         \
+         isStrike = true;\
+      \}\
+      \
+                  \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Frame 3 ////////////////////////\
+      System.out.print("Frame 3  -- Ball 1:");\
+      score5 = kb.nextInt();\
+      totalscore+= score5;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isStrike == true)\
+         totalscore+= 10 + score3;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score5;\
+         isSpare = false;\
+      \}\
+\
+      isStrikePass = true;\
+      \
+      if(score5 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score6 = kb.nextInt();\
+         totalscore+= score6;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score6;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score5 + score6 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+            strike++;\
+            \
+         if(isStrike == true)\{\
+            totalscore+= score6;\
+            isStrikePass = false;\
+         \}\
+         isStrike = true;\
+      \}    \
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Frame 4 ////////////////////////\
+      System.out.print("Frame 4  -- Ball 1:");\
+      score7 = kb.nextInt();\
+      totalscore+= score7;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score7;\
+         isSpare = false;\
+      \}\
+      \
+      isStrikePass = true;\
+      \
+      if(score7 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score8 = kb.nextInt();\
+         totalscore+= score8;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score8;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score7 + score8 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score8;\
+            isStrikePass = false;\
+         \}\
+         \
+         isStrike = true;\
+      \}      \
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Frame 5 ////////////////////////\
+      System.out.print("Frame 5  -- Ball 1:");\
+      score9 = kb.nextInt();\
+      totalscore+= score9;\
+\
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score9;\
+         isSpare = false;\
+      \}\
+      \
+      isStrikePass = true;\
+      \
+      if(score9 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score10 = kb.nextInt();\
+         totalscore+= score10;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score10;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score9 + score10 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      \
+      else\{\
+         strike++;  \
+         \
+         if(isStrike == true)\{\
+            totalscore+= score10;\
+            isStrikePass = false;\
+         \}\
+         \
+         isStrike = true;\
+      \}\
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Frame 6 ////////////////////////\
+      System.out.print("Frame 6  -- Ball 1:");\
+      score11 = kb.nextInt();\
+      totalscore+= score11;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isStrike == true)\
+         totalscore+= 10 + score3;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score11;\
+         isSpare = false;\
+      \}\
+      \
+      isStrikePass = true;\
+      \
+      if(score11 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score12 = kb.nextInt();\
+         totalscore+= score12;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score12;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score11 + score12 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score12;\
+            isStrikePass = false;\
+         \}\
+         \
+         isStrike = true;\
+      \}\
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Frame 7 ////////////////////////\
+      System.out.print("Frame 7  -- Ball 1:");\
+      score13 = kb.nextInt();\
+      totalscore+= score13;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isStrike == true)\{\
+         totalscore+= 10 + score13;\
+         isStrike = false;\
+      \}\
+      \
+      if(isSpare == true)\
+         totalscore+= score13;\
+         isSpare = false;\
+      \
+      isStrikePass = true;\
+      \
+      if(score13 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score14 = kb.nextInt();\
+         totalscore+= score14;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score14;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score13 + score14 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;  \
+         \
+         if(isStrike == true)\{\
+            totalscore+= score14;\
+            isStrikePass = false;\
+         \}\
+         isStrike = true;\
+      \}    \
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+            \
+      //////////////////////// Frame 8 ////////////////////////\
+      System.out.print("Frame 8  -- Ball 1:");\
+      score15 = kb.nextInt();\
+      totalscore+= score15;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score15;\
+         isSpare = false;\
+      \}\
+      \
+      isStrikePass = true;\
+      \
+      if(score15 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score16 = kb.nextInt();\
+         totalscore+= score16;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score16;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score15 + score16 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;  \
+         \
+         if(isStrike == true)\{\
+            totalscore+= score16;\
+            isStrikePass = false;\
+         \}\
+         isStrike = true;\
+      \}      \
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+            \
+      //////////////////////// Frame 9 ////////////////////////\
+      System.out.print("Frame 9  -- Ball 1:");\
+      score17 = kb.nextInt();\
+      totalscore+= score17;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score17;\
+         isSpare = false;\
+      \}\
+      \
+      if(isStrike == true)\
+         totalscore+= 10 + score3;\
+      \
+      isStrikePass = true;\
+      \
+      if(score17 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score18 = kb.nextInt();\
+         totalscore+= score18;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score18;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score17 + score18 == 10)\{\
+            spare++; \
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;  \
+         \
+         if(isStrike == true)\{\
+            totalscore+= score18;\
+            isStrikePass = false;\
+         \}\
+         isStrike = true;\
+      \}      \
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+            \
+      //////////////////////// Frame 10 ////////////////////////\
+      System.out.print("Frame 10 -- Ball 1:");\
+      score19 = kb.nextInt();\
+      totalscore+= score19;\
+      \
+      if(isStrikePass == true)\
+         isStrike = false;\
+      \
+      if(isSpare == true)\{\
+         totalscore+= score19;\
+         isSpare = false;\
+      \}\
+      \
+      if(isStrike == true)\
+         totalscore+= 10 + score3;\
+      \
+      isStrikePass = true;\
+      \
+      if(score19 != 10)\{\
+       \
+         System.out.print("         -- Ball 2:");\
+         score20 = kb.nextInt();\
+         totalscore+= score20;\
+         \
+         if(isStrike == true)\{\
+            totalscore+= score20;\
+            isStrike = false;\
+            isStrikePass = false;\
+         \}\
+         \
+         if(score19 + score20 == 10)\{\
+            spare++;\
+            isSpare = true;\
+         \}\
+      \}\
+      else\{\
+         strike++;  \
+         \
+         if(isStrike == true)\{\
+            totalscore+= score20;\
+            isStrikePass = false;\
+         \}\
+         \
+         isStrike = true;\
+      \}      \
+      \
+            \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      //////////////////////// Extra Roll ////////////////////////\
+      if(isSpare == true)\{\
+       \
+         System.out.print("Extra Roll - Ball 1:");\
+         extra_score = kb.nextInt();\
+      \}\
+      \
+      if(isStrike == true)\{\
+       \
+         System.out.print("Extra Roll - Ball 1:");\
+         extra_score = kb.nextInt();\
+         totalscore+= extra_score;\
+         \
+         System.out.print("Extra Roll - Ball 2:");\
+         extra_score = kb.nextInt();\
+         totalscore+= extra_score;\
+      \}\
+      \
+\
+      \
+      //test\
+      System.out.println(totalscore);\
+      //test\
+      \
+      \
+      // Calculations\
+\
+      totalscore+= extra_score;\
+      \
+      \
+      \
+      // Output\
+      \
+      System.out.println("Your total score is " + totalscore + ".");\
+      \
+      System.out.println("You rolled " + strike + " strike(s) and " + spare + " spare(s).");\
+      \
+      \
+      \
+      \
+   \}\
+\}\
+}

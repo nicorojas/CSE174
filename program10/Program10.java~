@@ -1,0 +1,17 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 10/26/2015
+// Filename: Program10.java
+// Description: Game of Craps
+
+
+public class Program10 {
+   
+   
+   public static void main(String[] args) { 
+      
+   }
+   
+   
+}

@@ -1,0 +1,25 @@
+////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * Auto Generated Java Class.
+ */
+
+public class AnimalTalk {
+   
+   
+   public static void main(String[] args) { 
+      
+      System.out.println("/\_/\");
+      System.out.println("( ' ' )");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      System.out.println("");
+      
+   }
+   
+
+   
+}

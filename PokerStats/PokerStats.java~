@@ -1,0 +1,80 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 11/22/2015
+// Filename: PokerStats.java
+// Description: 
+
+public class PokerStats {
+   
+   
+   public static void main(String[] args) { 
+      
+      
+      // At first, you should put whatever code you want in here to test your methods. 
+      // But when this method is complete, it should simply ask the user for how many
+      // poker hands, and then call on other methods as needed.
+      
+      System.out.println("How many poker hands should I deal?");
+      
+      
+   }
+   
+   public static void printHand(Card[] cards){
+   }
+   
+   public static boolean hasFlush(Card[] cards){
+   }
+   
+   public static boolean hasStraight(Card[] cards){
+   }
+   
+   public static boolean hasStraightFlush(Card[] cards){
+   }   
+   
+   public static boolean hasRoyalFlush(Card[] cards){
+   }   
+   
+   public static boolean has4OfAKind(Card[] cards){
+   }   
+   
+   public static boolean has3OfAKind(Card[] cards){
+   }   
+
+   public static boolean hasPair(Card[] cards){
+   }   
+   
+   public static boolean has2Pair(Card[] cards){
+   }   
+   
+   public static boolean hasFullHouse(Card[] cards){
+   }   
+   
+   public static String evaluateOneHandOfPoker(){
+      
+      Deck.reset();
+      Deck.shuffle();
+      
+      Deck.deal(); // loop 5 times
+      
+      // 52
+      
+      
+      // This creates a new deck of cards, shuffles the cards,
+      // deals 5 cards to an array of cards, sorts the cards,
+      // calls up to nine other methods to check what type of
+      // hand was dealt, and returns a String (such as "Full House")
+      // to indicate which type of hand it was.  This is a lot,
+      // but much of it is done through other methods you will write.
+      // Advice: Use Arrays.sort() to sort your cards.  It will be
+      // much easier to determine the hand type if the hand is first
+      // sorted.  You do not need to know how to do the sorting. Just call the method.  
+   }
+   
+   public static void playAndShowStats(int n){
+      // This plays n hands of poker, and gathers and displays the statistics
+      // when those hands are done.
+   }
+   
+   
+}

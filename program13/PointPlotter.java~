@@ -1,0 +1,59 @@
+/**
+ * A program that displays a set of points on the screen.
+ * Begin with an array of Point objects.  Send that array
+ * to a PointDisplay object.  The PointDisplay object will
+ * handle all the necessary drawing for you.
+ *
+ * @author Norm Krumpe
+ * @version 2.0
+ */
+import javax.swing.JFrame;
+
+public class PointPlotter  {
+  public static void main(String[] args) {
+    // For now, how JFrames work is unimportant. Our
+    // focus is on using a PointDisplay object,
+    // which requires an array of Point objects in order
+    // to work.
+    JFrame frame = new JFrame("Show Some Points");
+    frame.setBounds(300, 300, 615, 650);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    // PointDisplay objects "consume" arrays of Point objects.
+    // In other words, if you have an array of Point objects,
+    // and pass that array to PointDisplay, it will draw
+    // those points for you.
+    boolean connect = false;
+    int pointDiameter = 10;
+
+	Point[] myPoints = null;
+
+
+
+
+
+	// DON'T CHANGE THE REST OF THE CODE IN THIS METHOD:
+    PointDisplay display = new PointDisplay(myPoints,
+                                            pointDiameter, connect);
+    frame.add(display);
+    frame.setVisible(true);
+
+  }
+
+  // Returns an array list of 3 points.  Just so you can
+  // see how a method can return array lists:
+  public static Point[] easyArray() {
+
+	Point[] result = {
+		new Point(50, 60),
+		new Point(400, 300),
+		new Point(90, 174)
+	};
+
+	return result;
+  }
+
+
+
+
+}

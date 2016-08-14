@@ -1,0 +1,35 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 9/9/2015
+// Filename: Rectangle.java
+// Description: Prints the area and perimeter of a rectangle.
+
+public class Rectangle {
+   
+   
+   public static void main(String[] args) { 
+      
+      //User Input
+      System.out.println("Enter the length of the rectangle:");
+      
+      
+      System.out.println("Enter the height of the rectangle:");
+      
+      
+      //Calculations
+      
+      
+      //Output
+      System.out.println("Rectangle Calculations:");
+      System.out.println("-------------------------------------");
+      System.out.println("Area = ");
+      System.out.println("Perimeter = ");
+      System.out.println("Length of diagonal = ");
+      
+      
+   }
+   
+
+   
+}

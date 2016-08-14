@@ -1,0 +1,220 @@
+// Name: Nico Rojas
+// Instructor: Krumpe
+// CSE 174-F
+// Date: 10/14/2015
+// Filename: Program8.java
+// Description: Encode a user-inputed zip code into a USPS barcode.
+
+public class Program8 {
+  
+   public static void main(String[] args) { 
+
+      // Test printDigit
+      System.out.println("Testing printDigit():");
+      System.out.print("printDigit(0) "); 
+      printDigit(0); // ||:::
+      
+      // Test printDigit
+      System.out.print("\nprintDigit(1) "); 
+      printDigit(1); // :::||
+      
+      // Test printBarCode
+      System.out.print("\n\nTesting printBarCode():");
+      System.out.print("\nprintBarCode(20814) "); 
+      printBarCode(20814); // |::|:|||:::|::|::::||:|::|:|:|:|
+      
+      // Test printZipCode
+      System.out.print("\n\nTesting printZipCode(): ");
+      System.out.print("\nprintZipCode(\"|::|:|||:::|::|::::||:|::|:|:|:|\") ");
+      printZipCode("|::|:|||:::|::|::::||:|::|:|:|:|"); // 20814
+   }
+   
+   public static void printDigit(int d){
+
+      if(d == 1)
+        System.out.print(":::||");
+      
+      if(d == 2)
+         System.out.print("::|:|");
+      
+      if(d == 3)
+         System.out.print("::||:");        
+      
+      if(d == 4)
+         System.out.print(":|::|");
+      
+      if(d == 5)
+         System.out.print(":|:|:");
+      
+      if(d == 6)
+         System.out.print(":||::");
+      
+      if(d == 7)
+         System.out.print("|:::|");
+      
+      if(d == 8)
+         System.out.print("|::|:");
+      
+      if(d == 9)
+         System.out.print("|:|::");
+
+      if(d == 0)
+         System.out.print("||:::");
+   }
+   
+   public static void printBarCode(int zipCode){
+        
+      int d, count = 0, x = 0, y = 1, checkNum = 0;
+      String zipCodeString = "" + zipCode;
+   
+      // First "|"
+      System.out.print("|");
+      
+      while(count <= 4){
+      
+      d = Integer.valueOf(zipCodeString.substring(x,y));  
+      x+=1;
+      y+=1;
+         
+      if(d == 1)
+        printDigit(1);
+      
+      if(d == 2)
+         printDigit(2);
+      
+      if(d == 3)
+         printDigit(3);      
+      
+      if(d == 4)
+         printDigit(4);
+      
+      if(d == 5)
+         printDigit(5);
+      
+      if(d == 6)
+         printDigit(6);
+      
+      if(d == 7)
+         printDigit(7);
+      
+      if(d == 8)
+         printDigit(8);
+      
+      if(d == 9)
+         printDigit(9);
+
+      if(d == 0)
+         printDigit(0);
+
+      
+      // Check Digit
+      checkNum+= d;
+      count++;
+      }
+      
+      if(checkNum % 10 == 0)
+         System.out.print("||:::");
+ 
+      if(checkNum % 10 == 1)
+         System.out.print("|:|::");
+      
+      if(checkNum % 10 == 2)
+         System.out.print("|::|:");
+      
+      if(checkNum % 10 == 3)
+         System.out.print("|:::|");
+    
+      if(checkNum % 10 == 4)
+         System.out.print(":||::");    
+         
+      if(checkNum % 10 == 5)
+         System.out.print(":|:|:");
+      
+      if(checkNum % 10 == 6)
+         System.out.print(":||::");
+                  
+      if(checkNum % 10 == 7)
+         System.out.print("::||:");
+              
+      if(checkNum % 10 == 8)
+         System.out.print("::|:|");
+                  
+      if(checkNum % 10 == 9)
+         System.out.print(":::||");   
+
+      // Last "|" 
+      System.out.print("|");  
+   }
+   
+   public static void printZipCode(String barcode){
+ 
+      int count = 0, x = 1, y = 6, x2 = 1, y2 = 6, count2 = 0;
+      
+      if((barcode.length() != 32)||(!barcode.startsWith("|"))||
+         (!barcode.endsWith("|")))
+         System.out.println("Error, invalid barcode.");
+     
+      else{
+      
+      while(count <= 4){
+   
+         while(count2 <= 4){
+         
+            if((!barcode.substring(x2,y2).equals(":::||"))&& // 1
+               (!barcode.substring(x2,y2).equals("::|:|"))&& // 2          
+               (!barcode.substring(x2,y2).equals("::||:"))&& // 3
+               (!barcode.substring(x2,y2).equals(":|::|"))&& // 4         
+               (!barcode.substring(x2,y2).equals(":|:|:"))&& // 5
+               (!barcode.substring(x2,y2).equals(":||::"))&& // 6         
+               (!barcode.substring(x2,y2).equals("|:::|"))&& // 7
+               (!barcode.substring(x2,y2).equals("|::|:"))&& // 8        
+               (!barcode.substring(x2,y2).equals("|:|::"))&& // 9
+               (!barcode.substring(x2,y2).equals("||:::"))){ // 0 
+
+               count = 5;
+            }  
+            count2++;
+            x2+=5;   
+            y2+=5;      
+         }
+
+      if(count == 5)
+         System.out.println("Error, invalid barcode.");
+         
+      else if(barcode.substring(x,y).equals(":::||")) 
+         System.out.print("1");
+      
+      else if(barcode.substring(x,y).equals("::|:|"))
+         System.out.print("2");
+
+      else if(barcode.substring(x,y).equals("::||:"))
+         System.out.print("3");
+      
+      else if(barcode.substring(x,y).equals(":|::|"))
+         System.out.print("4");
+         
+      else if(barcode.substring(x,y).equals(":|:|:"))
+         System.out.print("5");
+         
+      else if(barcode.substring(x,y).equals(":||::"))
+         System.out.print("6");
+         
+      else if(barcode.substring(x,y).equals("|:::|"))
+         System.out.print("7");
+      
+      else if(barcode.substring(x,y).equals("|::|:"))
+        System.out.print("8");
+      
+      else if(barcode.substring(x,y).equals("|:|::"))
+        System.out.print("9");
+      
+      else if(barcode.substring(x,y).equals("||:::"))
+        System.out.print("0");
+        
+      x+=5;   
+      y+=5;  
+      count++; 
+     }
+     }
+   }
+}
