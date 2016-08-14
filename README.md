@@ -2,7 +2,7 @@
 
 All homework, labs, projects, etc.
 
-Miami Ohio | Krumpe Fall 2015
+Miami Ohio | Krumpe, Fall 2015
 
 --
 nicorojas
